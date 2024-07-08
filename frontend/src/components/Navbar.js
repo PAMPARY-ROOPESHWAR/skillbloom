@@ -37,20 +37,28 @@ const Navbar = () => {
                 </li>
               </>
             )}
-            {user && user.role === 'instructor' && (
+            {user && user.role === 'admin' && (
               <>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/my-courses">My Courses</Link>
+                  <Link className="nav-link" to="/admin">Dashboard</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/create-course">Create Course</Link>
+                  <Link className="nav-link" to="/admin/users">User</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/admin/courses">Course</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/admin/content">Content</Link>
                 </li>
               </>
             )}
             {user && (
-              <li className="nav-item">
-                <button className="nav-link btn btn-link" onClick={logout}>Logout</button>
-              </li>
+              <>
+                <li className="nav-item">
+                  <button className="nav-link btn btn-link" onClick={logout}>Logout</button>
+                </li>
+              </>
             )}
           </ul>
         </div>
